@@ -1,154 +1,93 @@
-# DashFinance - Feedback & Issues
+# Dash Finance - Sistema de Planejamento Financeiro
 
-<div align="center">
+## 📊 Sobre o Projeto
 
-**Controle e gerenciamento de finanças pessoais e pequenas empresas**
+O Dash Finance é um sistema de planejamento financeiro desenvolvido para ajudar no controle e gerenciamento de finanças pessoais e pequenas empresas. Com ele, você pode acompanhar entradas, saídas e fazer projeções financeiras ao longo do ano.
 
-[Visite o Site](https://dashfinance.com.br/) | [Reportar Bug](../../issues/new?labels=bug) | [Sugerir Funcionalidade](../../issues/new?labels=enhancement)
+## ✨ Funcionalidades Principais
 
-</div>
+- **Dashboard Financeiro**
 
----
+  - Visualização consolidada das finanças
+  - Gráficos e indicadores de desempenho financeiro
+  - Calendário financeiro
+  - Transações recentes
+  - Despesas por categoria
 
-## Sobre o Projeto
+- **Planejamento Financeiro**
 
-O **DashFinance** é uma plataforma completa de planejamento financeiro que combina tecnologia e inteligência artificial para ajudar pessoas físicas e consultores financeiros a organizarem suas finanças de forma profissional.
+  - Visualização anual e mensal do fluxo financeiro
+  - Planejamento detalhado de receitas e despesas
+  - Projeções financeiras
+  - Acompanhamento de metas financeiras
+  - Objetivos financeiros personalizados
 
-### Principais Funcionalidades
+- **Gestão de Transações**
 
-- **Dashboards Intuitivos** - Visualização em tempo real de suas finanças
-- **Assistente IA** - Análise de gastos e insights personalizados
-- **Gestão Multi-clientes** - Ideal para consultores financeiros
-- **Planejamento de Metas** - Acompanhamento de objetivos financeiros
-- **Relatórios Profissionais** - Personalizáveis com marca própria
-- **Agenda Financeira** - Lembretes automáticos de vencimentos
-- **Segurança Avançada** - Criptografia e backup automático
+  - Registro detalhado de transações
+  - Filtros e buscas avançadas
+  - Cancelamento e exclusão de transações
+  - Relatórios e sumários financeiros
+  - Importação automática de arquivos
+  - Transferências entre contas
 
----
+- **Gestão de Entradas e Saídas**
 
-## Sobre Este Repositório
+  - Registro de receitas e despesas
+  - Categorização de fontes de renda e gastos
+  - Controle de pagamentos parcelados
+  - Acompanhamento de recebimentos e pagamentos previstos
 
-Este é o **repositório público** do DashFinance, dedicado exclusivamente ao **feedback da comunidade**. O código-fonte da aplicação é mantido em repositórios privados.
+- **Gerenciamento de Contas Bancárias**
 
-**Aqui você pode:**
-- Reportar bugs e problemas
-- Sugerir novas funcionalidades
-- Discutir melhorias
-- Acompanhar o roadmap do produto
+  - Cadastro e controle de contas bancárias
+  - Acompanhamento de saldos
+  - Conciliação bancária
+  - Transferências entre contas
 
-**Aqui você NÃO pode:**
-- Acessar o código-fonte (privado)
-- Fazer pull requests de código
+- **Gestão de Cartões de Pagamento**
 
----
+  - Cadastro e controle de cartões de crédito/débito
+  - Acompanhamento de faturas e limites
+  - Gestão de pagamentos
 
-## Como Reportar um Bug
+- **Categorias Personalizadas**
 
-Encontrou um problema? Ajude-nos a melhorar!
+  - Criação e gerenciamento de categorias
+  - Organização por tipo de transação
+  - Relatórios por categoria
 
-1. **[Abra uma nova issue](../../issues/new?labels=bug)**
-2. Use um título claro e descritivo (ex: "Erro ao salvar transação recorrente")
-3. Inclua as seguintes informações:
-   - **Descrição detalhada** do problema
-   - **Passos para reproduzir** o erro
-   - **Comportamento esperado** vs. **comportamento atual**
-   - **Capturas de tela** (se aplicável)
-   - **Navegador e sistema operacional** utilizados
-   - **Data e hora** aproximada do ocorrido
+- **Importação de Dados**
 
-### Exemplo de Bug Report
+  - Upload de arquivos financeiros
+  - Extração automática de dados
+  - Processamento inteligente de transações
+  - Categorização automática
 
-```markdown
-**Descrição:**
-Ao tentar salvar uma transação recorrente mensal, recebo mensagem de erro.
+- **Chat Financeiro Inteligente**
 
-**Passos para reproduzir:**
-1. Acessar "Nova Transação"
-2. Marcar opção "Recorrente"
-3. Selecionar frequência "Mensal"
-4. Clicar em "Salvar"
+  - Interação por chat com seus dados financeiros
+  - Consultas em linguagem natural
+  - Resumos e insights financeiros
+  - Recomendações personalizadas
 
-**Esperado:** Transação salva com sucesso
-**Atual:** Mensagem de erro "Falha ao processar"
+- **Perfil e Configurações**
 
-**Ambiente:**
-- Navegador: Chrome 120
-- SO: Windows 11
-- Data: 04/12/2025 às 14:30
-```
+  - Gerenciamento de dados pessoais
+  - Personalização de preferências
+  - Alteração de senha e segurança
 
----
+- **Segurança**
+  - Autenticação segura
+  - Gerenciamento de chaves de API
+  - Controle de acesso
 
-## Como Sugerir uma Funcionalidade
+## 🚀 Tecnologias Utilizadas
 
-Tem uma ideia para melhorar o DashFinance? Adoraríamos ouvir!
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Prisma
+- MySQL
 
-1. **[Abra uma nova issue](../../issues/new?labels=enhancement)**
-2. Use um título descritivo (ex: "Adicionar exportação para Excel")
-3. Descreva:
-   - **O problema** que a funcionalidade resolve
-   - **Como funcionaria** (seja específico)
-   - **Quem se beneficiaria** desta funcionalidade
-   - **Alternativas** que você considerou
-
-### Exemplo de Sugestão
-
-```markdown
-**Problema:**
-Atualmente não consigo exportar relatórios personalizados para Excel.
-
-**Solução Proposta:**
-Adicionar botão "Exportar para Excel" nos relatórios, permitindo:
-- Escolher período de dados
-- Selecionar colunas específicas
-- Formato .xlsx compatível com Excel 2016+
-
-**Quem se beneficia:**
-Consultores financeiros que precisam apresentar dados aos clientes
-em formatos editáveis.
-
-**Alternativas:**
-- Exportação em CSV (menos formatação)
-- Integração com Google Sheets
-```
-
----
-
-## Diretrizes para Issues
-
-Para manter a qualidade e organização:
-
-- **Busque antes de criar** - Verifique se a issue já existe
-- **Seja específico** - Quanto mais detalhes, melhor
-- **Seja respeitoso** - Mantenha um tom profissional e construtivo
-- **Use labels apropriadas** - `bug`, `enhancement`, `question`, etc.
-- **Responda feedbacks** - Acompanhe sua issue e forneça informações adicionais se solicitado
-
----
-
-## Roadmap
-
-Acompanhe as funcionalidades planejadas e em desenvolvimento na [aba Projects](../../projects) e [Issues](../../issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc).
-
----
-
-## Contato
-
-- Site oficial: [dashfinance.com.br](https://dashfinance.com.br/)
-- Suporte: Através das [issues](../../issues) deste repositório
-
----
-
-## Contribuindo
-
-Sua contribuição é valiosa! Cada bug reportado e sugestão enviada nos ajuda a construir uma plataforma melhor para toda a comunidade.
-
-**Obrigado por fazer parte da evolução do DashFinance!**
-
----
-
-<div align="center">
-
-Feito com dedicação pela equipe DashFinance
-
-</div>
+npx @agentdeskai/browser-tools-server@1.2.0

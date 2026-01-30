@@ -1,0 +1,54 @@
+{
+  "version": "0.2",
+  "language": "pt-BR,en",
+  "dictionaries": [
+    "pt-br",
+    "typescript",
+    "node",
+    "npm",
+    "custom-project"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "custom-project",
+      "path": "./cspell-custom.txt",
+      "addWords": true
+    }
+  ],
+  "import": ["@cspell/dict-pt-br/cspell-ext.json"],
+  "ignorePaths": [
+    "node_modules/**",
+    ".next/**",
+    "dist/**",
+    "build/**",
+    "*.json",
+    "*.lock",
+    "pnpm-lock.yaml",
+    "package-lock.json",
+    ".git/**",
+    "public/**/*.svg",
+    "*.min.js",
+    "*.map"
+  ],
+  "ignoreRegExpList": [
+    "/\\w+@\\w+\\.\\w+/",
+    "/0x[0-9a-fA-F]+/",
+    "/\\b[A-Z]{2,}\\b/",
+    "/#[0-9a-fA-F]{3,8}/",
+    "/\\$\\{[^}]+\\}/",
+    "/`[^`]*`/",
+    "/className=\"[^\"]*\"/",
+    "/tailwind\\.[^\\s]*/",
+    "/tw`[^`]*`/"
+  ],
+  "words": [],
+  "flagWords": [],
+  "enableFiletypes": [
+    "tsx",
+    "ts",
+    "jsx",
+    "js",
+    "md",
+    "mdx"
+  ]
+}

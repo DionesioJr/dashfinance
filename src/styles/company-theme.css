@@ -1,0 +1,93 @@
+/* 
+ * Company Theme Utilities
+ * 
+ * Essas classes utilizam as cores dinâmicas da empresa definidas via CSS custom properties
+ * As cores são aplicadas automaticamente pelo CompanyThemeProvider baseado nos dados da query useMyCompany
+ */
+
+/* Cores de fundo usando as cores da empresa */
+.bg-company-primary {
+  background-color: var(--company-primary, hsl(var(--primary)));
+}
+
+.bg-company-secondary {
+  background-color: var(--company-secondary, hsl(var(--secondary)));
+}
+
+.bg-company-accent {
+  background-color: var(--company-accent, hsl(var(--accent)));
+}
+
+/* Cores de texto usando as cores da empresa */
+.text-company-primary {
+  color: var(--company-primary, hsl(var(--primary)));
+}
+
+.text-company-secondary {
+  color: var(--company-secondary, hsl(var(--secondary)));
+}
+
+.text-company-accent {
+  color: var(--company-accent, hsl(var(--accent)));
+}
+
+/* Cores de borda usando as cores da empresa */
+.border-company-primary {
+  border-color: var(--company-primary, hsl(var(--primary)));
+}
+
+.border-company-secondary {
+  border-color: var(--company-secondary, hsl(var(--secondary)));
+}
+
+.border-company-accent {
+  border-color: var(--company-accent, hsl(var(--accent)));
+}
+
+/* Variantes com opacity */
+.bg-company-primary\/10 {
+  background-color: color-mix(in srgb, var(--company-primary, hsl(var(--primary))) 10%, transparent);
+}
+
+.bg-company-primary\/20 {
+  background-color: color-mix(in srgb, var(--company-primary, hsl(var(--primary))) 20%, transparent);
+}
+
+.bg-company-primary\/50 {
+  background-color: color-mix(in srgb, var(--company-primary, hsl(var(--primary))) 50%, transparent);
+}
+
+/* Hover states */
+.hover\:bg-company-primary:hover {
+  background-color: var(--company-primary, hsl(var(--primary)));
+}
+
+.hover\:text-company-primary:hover {
+  color: var(--company-primary, hsl(var(--primary)));
+}
+
+.hover\:border-company-primary:hover {
+  border-color: var(--company-primary, hsl(var(--primary)));
+}
+
+/* Focus states */
+.focus\:ring-company-primary:focus {
+  --tw-ring-color: var(--company-primary, hsl(var(--primary)));
+}
+
+/* Gradientes usando cores da empresa */
+.bg-gradient-company {
+  background: linear-gradient(
+    135deg, 
+    var(--company-primary, hsl(var(--primary))) 0%, 
+    var(--company-accent, hsl(var(--accent))) 100%
+  );
+}
+
+.bg-gradient-company-subtle {
+  background: linear-gradient(
+    135deg, 
+    color-mix(in srgb, var(--company-primary, hsl(var(--primary))) 10%, transparent) 0%, 
+    color-mix(in srgb, var(--company-accent, hsl(var(--accent))) 10%, transparent) 100%
+  );
+}
