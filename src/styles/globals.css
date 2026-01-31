@@ -43,15 +43,20 @@
   --sidebar-ring: oklch(0.708 0 0);
 
   /* Temas Company */
-  --company-default: #333333;
+  --company-default: #1a1a1a;
   --company-blue: #007aff;
-  --company-green: #34c759;
+  --company-green: #10b981;
   --company-purple: #5856d6;
   --company-pink: #e91e63;
   --company-orange: #ff9500;
   --company-red: #ff3b30;
   --company-indigo: #4b0082;
   --company-teal: #5ac8fa;
+
+  /* Cor principal do site */
+  --site-primary: #10b981;
+  --site-primary-dark: #059669;
+  --site-primary-light: #34d399;
 }
 
 .dark {
@@ -91,13 +96,18 @@
   /* Temas Company no modo escuro */
   --company-default: #ffffff;
   --company-blue: #0a84ff;
-  --company-green: #30d158;
+  --company-green: #10b981;
   --company-purple: #5e5ce6;
   --company-pink: #ff2d55;
   --company-orange: #ff9f0a;
   --company-red: #ff453a;
   --company-indigo: #5e5ce6;
   --company-teal: #64d2ff;
+
+  /* Cor principal do site no modo escuro */
+  --site-primary: #10b981;
+  --site-primary-dark: #059669;
+  --site-primary-light: #34d399;
 }
 
 @theme inline {

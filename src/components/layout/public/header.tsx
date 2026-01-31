@@ -87,12 +87,12 @@ export function Header() {
 
             <div className="hidden md:flex items-center gap-3">
               <Link href="/sign-in">
-                <Button variant="ghost" className="font-medium cursor-pointer">
+                <Button variant="ghost" className="font-medium cursor-pointer hover:text-green-600 dark:hover:text-green-500">
                   Login
                 </Button>
               </Link>
               <Link href="/sign-up">
-                <Button className="font-medium group cursor-pointer">
+                <Button className="font-medium group cursor-pointer bg-black dark:bg-green-500 text-white dark:text-black hover:bg-black/90 dark:hover:bg-green-600 border border-green-500/20 dark:border-green-400 shadow-sm">
                   Cadastre-se
                   <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                 </Button>

@@ -6,43 +6,43 @@ import { Clock, FileText, TrendingUp, Users } from "lucide-react";
 export default function ConsultantBenefits() {
   const benefits = [
     {
-      icon: <Users className="h-8 w-8 text-blue-500" />,
+      icon: <Users className="h-8 w-8 text-green-600 dark:text-green-500" />,
       title: "Escale seu negócio",
       description: "Atenda mais clientes sem comprometer a qualidade do serviço",
       stats: "Até 5x mais clientes",
-      gradient: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      icon: <TrendingUp className="h-8 w-8 text-green-500" />,
-      title: "Aumente sua receita",
-      description: "Ofereça serviços premium com valor agregado diferenciado",
-      stats: "30-50% mais receita",
       gradient: "from-green-500/20 to-emerald-500/20",
     },
     {
-      icon: <FileText className="h-8 w-8 text-purple-500" />,
+      icon: <TrendingUp className="h-8 w-8 text-emerald-600 dark:text-emerald-500" />,
+      title: "Aumente sua receita",
+      description: "Ofereça serviços premium com valor agregado diferenciado",
+      stats: "30-50% mais receita",
+      gradient: "from-emerald-500/20 to-teal-500/20",
+    },
+    {
+      icon: <FileText className="h-8 w-8 text-green-600 dark:text-green-500" />,
       title: "Relatórios profissionais",
       description: "Impressione clientes com relatórios detalhados e personalizados",
       stats: "100% customizável",
-      gradient: "from-purple-500/20 to-pink-500/20",
+      gradient: "from-green-500/20 to-green-600/20",
     },
     {
-      icon: <Clock className="h-8 w-8 text-orange-500" />,
+      icon: <Clock className="h-8 w-8 text-teal-600 dark:text-teal-500" />,
       title: "Economize tempo",
       description: "Automatize tarefas repetitivas e foque no que realmente importa",
       stats: "70% menos tempo",
-      gradient: "from-orange-500/20 to-red-500/20",
+      gradient: "from-teal-500/20 to-green-500/20",
     },
   ];
 
 
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-br from-gray-50 to-white dark:from-gray-900 dark:to-black relative overflow-hidden transition-colors duration-300">
+    <section className="py-16 md:py-24 bg-white dark:bg-black relative overflow-hidden transition-colors duration-300">
       {/* Background Effects */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-400/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-400/20 rounded-full blur-3xl"></div>
+      <div className="absolute inset-0 opacity-20 dark:opacity-30">
+        <div className="absolute top-0 left-1/4 w-96 h-96 bg-green-400/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-emerald-400/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
@@ -51,7 +51,7 @@ export default function ConsultantBenefits() {
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="inline-block px-4 py-1.5 mb-4 text-sm font-medium text-blue-500 dark:text-blue-400 rounded-full border border-blue-200 dark:border-blue-800/60 bg-transparent backdrop-blur-sm"
+            className="inline-block px-4 py-1.5 mb-4 text-sm font-semibold text-green-600 dark:text-green-500 rounded-full border border-green-200 dark:border-green-800 bg-green-50 dark:bg-green-950/30"
           >
             Para Consultores
           </motion.div>
@@ -62,7 +62,7 @@ export default function ConsultantBenefits() {
             transition={{ duration: 0.5 }}
             className="text-3xl md:text-5xl font-semibold tracking-tight text-gray-900 dark:text-white mb-6"
           >
-            Por que consultores escolhem o DashFinance?
+            Resultados comprovados por consultores
           </motion.h2>
 
           <motion.p
@@ -71,8 +71,8 @@ export default function ConsultantBenefits() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"
           >
-            Mais de 1.000 consultores já confiam na nossa plataforma para oferecer um serviço de excelência aos seus
-            clientes.
+            Planejadores, consultores e assessores financeiros estão usando DashFinance para profissionalizar seu atendimento,
+            aumentar sua base de clientes e gerar mais receita.
           </motion.p>
         </div>
 
@@ -94,7 +94,7 @@ export default function ConsultantBenefits() {
                 <div className="mb-4">{benefit.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">{benefit.title}</h3>
                 <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{benefit.description}</p>
-                <div className="inline-block px-3 py-1 bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-full text-xs font-medium">
+                <div className="inline-block px-3 py-1 bg-green-50 dark:bg-green-900/30 text-green-700 dark:text-green-400 rounded-full text-xs font-medium border border-green-200 dark:border-green-800">
                   {benefit.stats}
                 </div>
               </div>
@@ -110,11 +110,11 @@ export default function ConsultantBenefits() {
           className="text-center mt-16"
         >
           <h3 className="text-2xl md:text-3xl font-semibold text-gray-900 dark:text-white mb-4">
-            Pronto para revolucionar sua consultoria?
+            Comece a escalar sua consultoria hoje
           </h3>
           <p className="text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-            Junte-se aos consultores que já estão oferecendo um serviço diferenciado e aumentando sua receita com o
-            DashFinance.
+            Ofereça uma experiência premium aos seus clientes com sua própria plataforma whitelabel.
+            Automatize processos, ganhe tempo e foque em fazer seu negócio crescer.
           </p>
         </motion.div>
       </div>
