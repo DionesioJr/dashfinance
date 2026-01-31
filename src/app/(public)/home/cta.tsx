@@ -44,7 +44,7 @@ export default function CTA() {
             e aumentando sua receita com o DashFinance.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mt-8">
-            <Link href="/sign-up" className="w-full sm:w-auto">
+            <Link href="https://app.dashfinance.com.br/sign-up" className="w-full sm:w-auto">
               <Button
                 size="lg"
                 className="w-full whitespace-nowrap text-base font-semibold ring-offset-white transition-all focus-visible:outline-hidden focus-visible:ring-2 focus-visible:ring-green-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 dark:ring-offset-black cursor-pointer hover:bg-black/90 dark:hover:bg-green-600 py-2 inline-flex items-center justify-center gap-2 rounded-lg relative h-12 px-8 bg-black dark:bg-green-500 text-white dark:text-black border border-green-500/20 dark:border-green-400 shadow-[0_8px_20px_-4px_rgba(16,185,129,0.3)] dark:shadow-[0_8px_20px_-4px_rgba(16,185,129,0.5)] hover:shadow-[0_12px_28px_-4px_rgba(16,185,129,0.4)] dark:hover:shadow-[0_12px_28px_-4px_rgba(16,185,129,0.6)]"
@@ -56,7 +56,7 @@ export default function CTA() {
               </Button>
             </Link>
 
-            <Link href="/sign-in" className="w-full sm:w-auto">
+            <Link href="https://app.dashfinance.com.br/sign-in" className="w-full sm:w-auto">
               <Button
                 variant="outline"
                 size="lg"

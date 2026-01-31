@@ -86,12 +86,12 @@ export function Header() {
             <ModeToggle />
 
             <div className="hidden md:flex items-center gap-3">
-              <Link href="/sign-in">
+              <Link href="https://app.dashfinance.com.br/sign-in">
                 <Button variant="ghost" className="font-medium cursor-pointer hover:text-green-600 dark:hover:text-green-500">
                   Login
                 </Button>
               </Link>
-              <Link href="/sign-up">
+              <Link href="https://app.dashfinance.com.br/sign-up">
                 <Button className="font-medium group cursor-pointer bg-black dark:bg-green-500 text-white dark:text-black hover:bg-black/90 dark:hover:bg-green-600 border border-green-500/20 dark:border-green-400 shadow-sm">
                   Cadastre-se
                   <ArrowUpRight className="ml-1 h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -133,13 +133,13 @@ export function Header() {
 
                   <div className="mt-auto p-4 border-t border-gray-200 dark:border-gray-800">
                     <div className="space-y-3">
-                      <Link href="/sign-in" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
+                      <Link href="https://app.dashfinance.com.br/sign-in" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
                         <Button variant="outline" className="w-full justify-center font-medium mb-4">
                           <LogIn className="mr-2 h-4 w-4" />
                           Login
                         </Button>
                       </Link>
-                      <Link href="/sign-up" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
+                      <Link href="https://app.dashfinance.com.br/sign-up" onClick={() => setIsMobileMenuOpen(false)} className="w-full">
                         <Button className="w-full justify-center font-medium">
                           Cadastre-se
                           <ArrowUpRight className="ml-1 h-4 w-4" />
