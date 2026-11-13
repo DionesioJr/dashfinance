@@ -1,12 +1,19 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
+import { Geist, Geist_Mono } from "next/font/google";
 
 import CoreProvider from "@/providers/core-provider";
 
+const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
+const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+
+const TITLE = "DashFinance: o sistema da sua consultoria financeira";
+const DESCRIPTION =
+  "Plataforma para planejadores, consultores e assessores financeiros. Onboarding, diagnóstico em PDF, orçamento, metas e patrimônio de cada cliente, em um aplicativo com a sua marca.";
+
 export const metadata: Metadata = {
-  title: "DashFinance - Sistema de Planejamento Financeiro",
-  description:
-    "Gerencie suas finanças pessoais e empresariais com facilidade. Controle entradas, saídas e faça projeções financeiras.",
+  title: TITLE,
+  description: DESCRIPTION,
   icons: {
     icon: [
       {
@@ -26,25 +33,23 @@ export const metadata: Metadata = {
     type: "website",
     locale: "pt_BR",
     url: "https://dashfinance.com.br",
-    title: "DashFinance - Sistema de Planejamento Financeiro",
-    description:
-      "Gerencie suas finanças pessoais e empresariais com facilidade. Controle entradas, saídas e faça projeções financeiras.",
+    title: TITLE,
+    description: DESCRIPTION,
     siteName: "DashFinance",
     images: [
       {
-        url: "/images/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "DashFinance",
+        url: "/images/dashboard-light.png",
+        width: 1920,
+        height: 1080,
+        alt: "Dashboard do DashFinance",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "DashFinance - Sistema de Planejamento Financeiro",
-    description:
-      "Gerencie suas finanças pessoais e empresariais com facilidade. Controle entradas, saídas e faça projeções financeiras.",
-    images: ["/images/og-image.png"],
+    title: TITLE,
+    description: DESCRIPTION,
+    images: ["/images/dashboard-light.png"],
   },
 };
 
@@ -54,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br" suppressHydrationWarning className="light">
-      <body suppressHydrationWarning className="min-h-screen bg-background antialiased">
+    <html lang="pt-BR" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body suppressHydrationWarning className="min-h-screen bg-background font-sans antialiased">
         <CoreProvider>{children}</CoreProvider>
       </body>
     </html>
