@@ -1,74 +1,35 @@
 # CLAUDE.md
 
-Guidance for Claude Code when working with this repository.
+Orientação para o Claude Code em `dashfinance/`. Regras gerais (idioma, emojis, travessão, comentários, subagentes, commits, changelog, formato das respostas) ficam no [`CLAUDE.md`](../CLAUDE.md) da raiz.
 
-## sempre que recebir uma solicitação do usuario, deve verificar se esta bem explicada. caso Não esteja sem explicada deve perguntar no formato de questionario as duvidas em aberto, brechas que não foram explicadas.
+## Projeto
 
-## não use emojes, Não use emojes em nenhuma parte, nem em documentaçao nem em codigo.
+Site institucional do DashFinance: home (problema, como funciona, telas, preços, FAQ, chamada final), sobre, changelog público, solicitação de apresentação, termos e privacidade. Não contém a aplicação logada (que fica em `web/`).
 
-## o uso de comentario deve ser sutil e apenas quando necessario/
+Stack: Next.js 15 (App Router), React 19, Tailwind CSS 4, shadcn/ui (Radix UI), next-themes.
 
-## não use crie arquivos index.tsx ou index.ts
+Estrutura em `src/`:
 
-## nos texto para o usuario deve usar o portugues dop brasil com a ortografia brasileira e a gramatica brasileira
+```
+src/
+├── app/(public)/   # Páginas públicas (home dividida em seções em home/)
+├── components/
+│   ├── layout/public/   # Header, footer, alternância de tema
+│   └── ui/              # Componentes shadcn/ui
+├── domains/
+├── lib/
+├── providers/
+├── shared/
+└── styles/
+```
 
-### Package Management
-- Use `pnpm` for all package operations (not npm or yarn)
-- nunca execute o build se não for uma solicitação do usuario
-- os componentes como forms, tabelas, charts, cards, deve ser totalmente independetes e eles mesmo deve consultar as mitations e as queries se necessario. sendo assim deixando o componente independente.
+Comandos: `pnpm dev`, `pnpm lint` (só com autorização do usuário).
 
+## Regras
 
-### Tech Stack
-- **Next.js 15.2.1** with App Router and TypeScript
-- **React 19** with modern hooks patterns
-- **Tailwind CSS 4.0** for styling
-- **React Query (TanStack Query 5.67.3)** for server state
-- **Zod 3.24.2** for validation with strict schema patterns
-- **shadcn/ui** components with Radix UI primitives
-
-## CRITICAL: Architecture First Approach
-
-**BEFORE editing ANY file, you MUST:**
-
-1. **Read architecture**: `@docs/guidelines/nextjs_architecture.md`
-2. **Check guideline for file type**: `@docs/README.md` and specific guidelines:
-   - API files: `@docs/guidelines/api.md`
-   - Services: `@docs/guidelines/service.md`
-   - Types: `@docs/guidelines/types.md`
-   - Schemas: `@docs/guidelines/validation_schema.md`
-   - Queries: `@docs/guidelines/queries.md`
-   - Mutations: `@docs/guidelines/mutation.md`
-   - Forms: `@docs/guidelines/forms.md`
-   - Modals: `@docs/guidelines/modal_dialog.md`
-
-3. **Follow domain patterns**: Each domain follows DDD structure:
-   ```
-   src/domains/[domain]/
-   ├── [domain].api.ts
-   ├── [domain].type.ts
-   ├── [domain].schema.ts
-   ├── [domain].service.ts
-   ├── [domain].queries.ts
-   ├── [domain].mutations.ts
-   └── components/
-   ```
-
-## Essential Rules
-
-- **No emojis** anywhere (code, docs, comments)
-- **Use pnpm** for package management
-- **Always use guidelines** before creating/editing files
-- **Consistent naming** across all domains
-- **JSDoc comments** on all functions
-- **"use client"** directive where required
-
-## Tech Stack
-
-- Next.js 15.2.1 + App Router
-- React 19
-- TypeScript
-- TanStack Query 5.67.3
-- Zod 3.24.2
-- Tailwind CSS 4.0
-- shadcn/ui
-
+- Imports com `@/*`. Relativo só para arquivo no mesmo diretório.
+- Reutilize os componentes de `src/components/` antes de criar novos.
+- Seções da home ficam em arquivos próprios em `src/app/(public)/home/` e usam as primitivas de `section-primitives.tsx`.
+- Copy do site em português do Brasil, com ortografia, acentuação e pontuação corretas, sem emojis e sem travessão.
+- Declare `"use client"` só quando o componente precisar de estado, efeito ou evento do navegador.
+- Nunca crie arquivos `index.ts` ou `index.tsx`.
