@@ -1,93 +1,51 @@
-# Dash Finance - Sistema de Planejamento Financeiro
+# DashFinance: site institucional
 
-## 📊 Sobre o Projeto
+Site público do DashFinance, voltado a planejadores, consultores e assessores financeiros. A aplicação logada fica em `web/`; aqui ficam apenas as páginas de apresentação.
 
-O Dash Finance é um sistema de planejamento financeiro desenvolvido para ajudar no controle e gerenciamento de finanças pessoais e pequenas empresas. Com ele, você pode acompanhar entradas, saídas e fazer projeções financeiras ao longo do ano.
+## Páginas
 
-## ✨ Funcionalidades Principais
+| Rota | Conteúdo |
+| --- | --- |
+| `/` | Home: problema, como funciona, telas do aplicativo, recursos, preços, perguntas frequentes e chamada final |
+| `/about` | Sobre o fundador e a aplicação |
+| `/changelog` | Histórico público de atualizações |
+| `/request-presentation` | Solicitação de apresentação |
+| `/terms` e `/privacy` | Termos de uso e Política de privacidade |
 
-- **Dashboard Financeiro**
+## Tecnologias
 
-  - Visualização consolidada das finanças
-  - Gráficos e indicadores de desempenho financeiro
-  - Calendário financeiro
-  - Transações recentes
-  - Despesas por categoria
+- Next.js 15 (App Router) e React 19
+- Tailwind CSS 4 e shadcn/ui (Radix UI)
+- next-themes (tema claro e escuro)
 
-- **Planejamento Financeiro**
+## Design system
 
-  - Visualização anual e mensal do fluxo financeiro
-  - Planejamento detalhado de receitas e despesas
-  - Projeções financeiras
-  - Acompanhamento de metas financeiras
-  - Objetivos financeiros personalizados
+O visual segue o design system do DashFinance, o mesmo de `web/`:
 
-- **Gestão de Transações**
+- Tokens em `src/styles/tokens/` (cores, estados semânticos e formas) e ponte com o Tailwind em `src/styles/theme.css`.
+- Fontes Gilda Display (títulos) e Inter Tight (texto), carregadas em `src/app/layout.tsx`.
+- Escala tipográfica em classes como `text-display-lg`, `text-body-sm` e `text-overline`. O `cn` de `src/shared/utils/cn.ts` conhece essa escala; use sempre ele para combinar classes.
 
-  - Registro detalhado de transações
-  - Filtros e buscas avançadas
-  - Cancelamento e exclusão de transações
-  - Relatórios e sumários financeiros
-  - Importação automática de arquivos
-  - Transferências entre contas
+## Desenvolvimento
 
-- **Gestão de Entradas e Saídas**
+```bash
+pnpm install
+pnpm dev
+```
 
-  - Registro de receitas e despesas
-  - Categorização de fontes de renda e gastos
-  - Controle de pagamentos parcelados
-  - Acompanhamento de recebimentos e pagamentos previstos
+O site abre em `http://localhost:3000`. Use `pnpm` em todas as operações de pacote.
 
-- **Gerenciamento de Contas Bancárias**
+## Estrutura
 
-  - Cadastro e controle de contas bancárias
-  - Acompanhamento de saldos
-  - Conciliação bancária
-  - Transferências entre contas
+```
+src/
+├── app/(public)/        # Páginas públicas; a home é dividida em seções em home/
+├── components/
+│   ├── layout/public/   # Cabeçalho, rodapé, contêiner, marca e textura de mármore
+│   └── ui/              # Componentes shadcn/ui usados pelo site
+├── providers/           # Tema
+├── shared/utils/        # cn
+└── styles/              # Tokens e tema
+```
 
-- **Gestão de Cartões de Pagamento**
-
-  - Cadastro e controle de cartões de crédito/débito
-  - Acompanhamento de faturas e limites
-  - Gestão de pagamentos
-
-- **Categorias Personalizadas**
-
-  - Criação e gerenciamento de categorias
-  - Organização por tipo de transação
-  - Relatórios por categoria
-
-- **Importação de Dados**
-
-  - Upload de arquivos financeiros
-  - Extração automática de dados
-  - Processamento inteligente de transações
-  - Categorização automática
-
-- **Chat Financeiro Inteligente**
-
-  - Interação por chat com seus dados financeiros
-  - Consultas em linguagem natural
-  - Resumos e insights financeiros
-  - Recomendações personalizadas
-
-- **Perfil e Configurações**
-
-  - Gerenciamento de dados pessoais
-  - Personalização de preferências
-  - Alteração de senha e segurança
-
-- **Segurança**
-  - Autenticação segura
-  - Gerenciamento de chaves de API
-  - Controle de acesso
-
-## 🚀 Tecnologias Utilizadas
-
-- Next.js
-- TypeScript
-- Tailwind CSS
-- Prisma
-- MySQL
-
-npx @agentdeskai/browser-tools-server@1.2.0
+As imagens das telas do aplicativo ficam em `public/images/app/`.
