@@ -1,0 +1,131 @@
+/*
+ * Tokens de cor. Fonte única dos valores de superfície, texto, borda e categoria.
+ * Mesmos valores de web/src/styles/tokens/colors.css (design system DashFinance).
+ *
+ * Duas camadas:
+ * 1. Paleta do design system (brand, ink, line, surface, state, cat).
+ * 2. Nomes shadcn (--primary, --background, ...) apontando para a paleta.
+ *
+ * O tema escuro redefine os papéis (ink, line, surface), então as classes se adaptam sozinhas.
+ */
+
+:root {
+  /* Marca: verde profundo e tons suaves */
+  --brand-900: #0a221b;
+  --brand-800: #0e2b23;
+  --brand-700: #143d31;
+  --brand-500: #2d6050;
+  --brand-200: #a9c9ba;
+  --brand-150: #d8e4dd;
+  --brand-100: #e3ece7;
+  --brand-050: #eef3f0;
+
+  /* Texto */
+  --ink-900: #141a17;
+  --ink-800: #2a302d;
+  --ink-600: #5e6662;
+  --ink-500: #6f7773;
+  --ink-400: #8a928e;
+  --ink-300: #b4bbb7;
+
+  /* Linhas */
+  --line-strong: #d9dfdb;
+  --line-soft: #ecefed;
+
+  /* Superfícies */
+  --surface-base: #ffffff;
+  --surface-hover: #f6f8f7;
+  --surface-selected: #f2f5f3;
+  --surface-tint: #e9edeb;
+  --surface-inverse: var(--brand-800);
+  --on-inverse: #ffffff;
+  --on-inverse-muted: rgba(255, 255, 255, 0.7);
+  --scrim: rgba(20, 26, 23, 0.4);
+
+  /* Estados */
+  --state-positive: #1b6046;
+  --state-warning: #8a4b0f;
+  --state-negative: #a3302a;
+  --state-disabled: #9aa49f;
+
+  /* Categorias */
+  --cat-terracota-bg: #f4e7df;
+  --cat-terracota-fg: #6e3a1e;
+  --cat-ocre-bg: #f1ebdb;
+  --cat-ocre-fg: #5e4712;
+  --cat-indigo-bg: #e6e9f1;
+  --cat-indigo-fg: #2b3766;
+  --cat-ameixa-bg: #ede3ec;
+  --cat-ameixa-fg: #5a2a57;
+  --cat-salvia-bg: #e3ede8;
+  --cat-salvia-fg: var(--brand-800);
+
+  /* Nomes shadcn */
+  --background: var(--surface-base);
+  --foreground: var(--ink-900);
+  --card: var(--surface-base);
+  --card-foreground: var(--ink-900);
+  --popover: var(--surface-base);
+  --popover-foreground: var(--ink-900);
+  --primary: var(--brand-800);
+  --primary-foreground: var(--on-inverse);
+  --primary-hover: var(--brand-900);
+  --secondary: var(--brand-100);
+  --secondary-foreground: var(--ink-900);
+  --muted: var(--surface-selected);
+  --muted-foreground: var(--ink-600);
+  --accent: var(--surface-selected);
+  --accent-foreground: var(--ink-900);
+  --destructive: var(--state-negative);
+  --destructive-foreground: var(--on-inverse);
+  --border: var(--line-soft);
+  --input: var(--line-strong);
+  --ring: var(--brand-800);
+}
+
+/*
+ * Tema escuro derivado do design system (que só define o claro), igual ao de web/.
+ */
+.dark {
+  --brand-150: #223730;
+  --brand-100: #1a2a24;
+  --brand-050: #14211c;
+
+  --ink-900: #eef3f0;
+  --ink-800: #d5dcd8;
+  --ink-600: #a3aca7;
+  --ink-500: #8f9893;
+  --ink-400: #6f7773;
+  --ink-300: #4a534e;
+
+  --line-strong: #2c3b35;
+  --line-soft: #1f2d27;
+
+  --surface-base: #0c1411;
+  --surface-hover: #131d19;
+  --surface-selected: #17231e;
+  --surface-tint: #101a16;
+  --scrim: rgba(0, 0, 0, 0.6);
+
+  --state-positive: #6fcaa3;
+  --state-warning: #e0a45f;
+  --state-negative: #ef8a83;
+  --state-disabled: #4a534e;
+
+  --cat-terracota-bg: #2e1d14;
+  --cat-terracota-fg: #e9b99c;
+  --cat-ocre-bg: #2b2412;
+  --cat-ocre-fg: #e3cd8f;
+  --cat-indigo-bg: #1a2038;
+  --cat-indigo-fg: #b7c0e8;
+  --cat-ameixa-bg: #2b1a2a;
+  --cat-ameixa-fg: #dcb0d8;
+  --cat-salvia-bg: #16261f;
+  --cat-salvia-fg: var(--brand-200);
+
+  --primary: var(--brand-200);
+  --primary-foreground: var(--brand-900);
+  --primary-hover: #c3dbcf;
+  --destructive-foreground: var(--surface-base);
+  --ring: var(--brand-200);
+}

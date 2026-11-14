@@ -1,0 +1,194 @@
+/*
+ * Ponte entre os tokens (tokens/*.css) e os utilitários do Tailwind, no mesmo formato de web/.
+ * Todo token novo que deva virar classe (bg-*, text-*, border-*) precisa de uma linha aqui.
+ */
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-hover: var(--primary-hover);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-success-subtle: var(--success-subtle);
+  --color-success-subtle-foreground: var(--success-subtle-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-warning-subtle: var(--warning-subtle);
+  --color-warning-subtle-foreground: var(--warning-subtle-foreground);
+  --color-danger: var(--danger);
+  --color-danger-foreground: var(--danger-foreground);
+  --color-danger-subtle: var(--danger-subtle);
+  --color-danger-subtle-foreground: var(--danger-subtle-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-info-subtle: var(--info-subtle);
+  --color-info-subtle-foreground: var(--info-subtle-foreground);
+  --color-income: var(--income);
+  --color-expense: var(--expense);
+  --color-transfer: var(--transfer);
+
+  --color-brand-900: var(--brand-900);
+  --color-brand-800: var(--brand-800);
+  --color-brand-700: var(--brand-700);
+  --color-brand-500: var(--brand-500);
+  --color-brand-200: var(--brand-200);
+  --color-brand-150: var(--brand-150);
+  --color-brand-100: var(--brand-100);
+  --color-brand-050: var(--brand-050);
+
+  --color-ink-900: var(--ink-900);
+  --color-ink-800: var(--ink-800);
+  --color-ink-600: var(--ink-600);
+  --color-ink-500: var(--ink-500);
+  --color-ink-400: var(--ink-400);
+  --color-ink-300: var(--ink-300);
+
+  --color-line-strong: var(--line-strong);
+  --color-line-soft: var(--line-soft);
+
+  --color-surface-base: var(--surface-base);
+  --color-surface-hover: var(--surface-hover);
+  --color-surface-selected: var(--surface-selected);
+  --color-surface-tint: var(--surface-tint);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-on-inverse: var(--on-inverse);
+  --color-on-inverse-muted: var(--on-inverse-muted);
+  --color-scrim: var(--scrim);
+
+  --color-state-positive: var(--state-positive);
+  --color-state-warning: var(--state-warning);
+  --color-state-negative: var(--state-negative);
+  --color-state-disabled: var(--state-disabled);
+
+  --color-cat-terracota-bg: var(--cat-terracota-bg);
+  --color-cat-terracota-fg: var(--cat-terracota-fg);
+  --color-cat-ocre-bg: var(--cat-ocre-bg);
+  --color-cat-ocre-fg: var(--cat-ocre-fg);
+  --color-cat-indigo-bg: var(--cat-indigo-bg);
+  --color-cat-indigo-fg: var(--cat-indigo-fg);
+  --color-cat-ameixa-bg: var(--cat-ameixa-bg);
+  --color-cat-ameixa-fg: var(--cat-ameixa-fg);
+  --color-cat-salvia-bg: var(--cat-salvia-bg);
+  --color-cat-salvia-fg: var(--cat-salvia-fg);
+
+  /* Superfícies retas; só controles e flutuantes arredondam */
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+  --radius-xl: 0px;
+  --radius-pill: 999px;
+  --radius-block: 12px;
+  --radius-overlay: 16px;
+
+  /* Sistema plano: só o que flutua tem sombra */
+  --shadow-2xs: 0 0 #0000;
+  --shadow-xs: 0 0 #0000;
+  --shadow-sm: 0 0 #0000;
+  --shadow-md: var(--shadow-overlay);
+  --shadow-lg: var(--shadow-overlay);
+  --shadow-xl: var(--shadow-overlay);
+  --shadow-2xl: var(--shadow-overlay);
+  --shadow-overlay: var(--shadow-overlay);
+  --shadow-raised: var(--shadow-raised);
+  --shadow-selected: var(--shadow-selected);
+  --shadow-focus: var(--shadow-focus);
+
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-display: var(--font-gilda-display), Georgia, serif;
+}
+
+/* Foco de teclado do design system (anel de 2px com respiro) */
+@utility focus-ring {
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--shadow-focus);
+  }
+}
+
+/* Escala tipográfica do design system: text-display-xl, text-body-sm, text-overline, ... */
+@theme {
+  /*
+   * Classes padrão do Tailwind presas à escala: text-xs = caption, text-sm = body-sm,
+   * text-base = tamanho de body. font-bold vira 600 porque Inter Tight só é carregada até 600.
+   */
+  --text-xs: 12px;
+  --text-xs--line-height: 16px;
+  --text-xs--font-weight: 300;
+  --text-sm: 14px;
+  --text-sm--line-height: 20px;
+  --text-base: 15px;
+  --text-base--line-height: 24px;
+  --font-weight-bold: 600;
+
+  --text-display-xl: 80px;
+  --text-display-xl--line-height: 88px;
+  --text-display-xl--letter-spacing: -0.4px;
+  --text-display-xl--font-weight: 400;
+  --text-display-lg: 44px;
+  --text-display-lg--line-height: 50px;
+  --text-display-lg--font-weight: 400;
+  --text-display-md: 32px;
+  --text-display-md--line-height: 40px;
+  --text-display-md--font-weight: 400;
+
+  --text-amount-xl: 64px;
+  --text-amount-xl--line-height: 64px;
+  --text-amount-xl--letter-spacing: -1.9px;
+  --text-amount-xl--font-weight: 400;
+  --text-amount-lg: 56px;
+  --text-amount-lg--line-height: 56px;
+  --text-amount-lg--letter-spacing: -1.4px;
+  --text-amount-lg--font-weight: 400;
+  --text-amount-md: 26px;
+  --text-amount-md--line-height: 32px;
+  --text-amount-md--letter-spacing: -0.4px;
+  --text-amount-md--font-weight: 400;
+
+  --text-title: 28px;
+  --text-title--line-height: 34px;
+  --text-title--letter-spacing: -0.4px;
+  --text-title--font-weight: 400;
+  --text-heading: 15px;
+  --text-heading--line-height: 22px;
+  --text-heading--font-weight: 500;
+  --text-body: 15px;
+  --text-body--line-height: 24px;
+  --text-body--font-weight: 300;
+  --text-body-sm: 14px;
+  --text-body-sm--line-height: 20px;
+  --text-body-sm--font-weight: 400;
+  --text-caption: 12px;
+  --text-caption--line-height: 16px;
+  --text-caption--font-weight: 300;
+
+  --text-overline: 11px;
+  --text-overline--line-height: 16px;
+  --text-overline--letter-spacing: 1.76px;
+  --text-overline--font-weight: 500;
+  --text-button: 11px;
+  --text-button--line-height: 16px;
+  --text-button--letter-spacing: 1.54px;
+  --text-button--font-weight: 500;
+  --text-button-lg: 12px;
+  --text-button-lg--line-height: 16px;
+  --text-button-lg--letter-spacing: 1.92px;
+  --text-button-lg--font-weight: 500;
+}

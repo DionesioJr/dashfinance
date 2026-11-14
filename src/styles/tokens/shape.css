@@ -1,0 +1,23 @@
+/*
+ * Tokens de forma, sombra e layout do design system, iguais aos de web/.
+ * Superfícies são retas; raios só em controles (rounded-pill), blocos (rounded-block) e flutuantes (rounded-overlay).
+ */
+
+:root {
+  --shadow-raised: 0 1px 3px rgba(14, 43, 35, 0.14);
+  --shadow-overlay: 0 16px 40px rgba(14, 43, 35, 0.14), 0 2px 8px rgba(14, 43, 35, 0.06);
+  --shadow-selected: 0 0 0 3px var(--surface-base), 0 0 0 4px var(--ink-900);
+  --shadow-focus: 0 0 0 2px var(--surface-base), 0 0 0 4px var(--brand-800);
+
+  --layout-sidebar: 240px;
+  --layout-content-max: 1120px;
+  --layout-gutter: 48px;
+  --layout-control: 44px;
+  --layout-action-bar: 76px;
+}
+
+.dark {
+  --shadow-raised: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-overlay: 0 16px 40px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-focus: 0 0 0 2px var(--surface-base), 0 0 0 4px var(--brand-200);
+}

@@ -1,0 +1,46 @@
+/*
+ * Tokens semânticos de estado e de domínio financeiro, iguais aos de web/.
+ * Use no lugar de cores da paleta: text-success, bg-success-subtle, text-income, text-expense.
+ * Cada grupo tem: cor sólida, texto sobre a cor sólida, fundo suave e texto sobre o fundo suave.
+ *
+ * Regras do design system: despesa comum é cor de texto (sem vermelho); danger é para erro.
+ * Receita e despesa se distinguem pelo sinal, não só pela cor.
+ */
+
+:root {
+  --success: var(--state-positive);
+  --success-foreground: var(--on-inverse);
+  --success-subtle: var(--brand-050);
+  --success-subtle-foreground: var(--state-positive);
+
+  --warning: var(--state-warning);
+  --warning-foreground: var(--on-inverse);
+  --warning-subtle: var(--cat-ocre-bg);
+  --warning-subtle-foreground: var(--state-warning);
+
+  --danger: var(--state-negative);
+  --danger-foreground: var(--on-inverse);
+  --danger-subtle: #f7e8e6;
+  --danger-subtle-foreground: var(--state-negative);
+
+  --info: var(--cat-indigo-fg);
+  --info-foreground: var(--on-inverse);
+  --info-subtle: var(--cat-indigo-bg);
+  --info-subtle-foreground: var(--cat-indigo-fg);
+
+  --income: var(--success);
+  --expense: var(--ink-900);
+  --transfer: var(--info);
+}
+
+.dark {
+  --success-foreground: var(--surface-base);
+  --success-subtle: #14271f;
+
+  --warning-foreground: var(--surface-base);
+
+  --danger-foreground: var(--surface-base);
+  --danger-subtle: #2e1613;
+
+  --info-foreground: var(--surface-base);
+}
