@@ -49,13 +49,14 @@ export default function Hero() {
       <Container className="py-12 md:py-16">
         <figure className="border border-line-soft bg-surface-base">
           <figcaption className="border-b border-line-soft px-5 py-3 text-overline uppercase text-ink-500">
-            Aplicativo do cliente / Dashboard
+            Aplicativo do cliente / Visão geral
           </figcaption>
           <Image
-            src="/images/app/dashboard.jpg"
-            alt="Dashboard do cliente com receita, despesas, saldo líquido e o ritmo de gastos do mês"
+            src="/images/app/dashboard.png"
+            alt="Visão geral do cliente com saldo consolidado, receitas, despesas, resultado e o fluxo de caixa do mês"
             width={1568}
             height={765}
+            quality={90}
             priority
             className="block h-auto w-full"
           />
