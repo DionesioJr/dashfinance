@@ -6,7 +6,7 @@ export default function Page() {
       <p>
         A DashFinance (<strong>nós</strong>, <strong>nosso</strong>) respeita a privacidade de seus usuários (
         <strong>você</strong>) e está comprometida em proteger as informações pessoais que você compartilha conosco ao
-        usar nossa Plataforma de Gerenciamento de Projetos e Times. Esta Política de Privacidade explica como coletamos,
+        usar nossa plataforma de planejamento e gestão financeira. Esta Política de Privacidade explica como coletamos,
         usamos, divulgamos e protegemos suas informações ao acessar e usar o sistema DashFinance.
       </p>
 

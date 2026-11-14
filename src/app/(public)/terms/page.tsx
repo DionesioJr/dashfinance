@@ -15,8 +15,8 @@ export default function Page() {
       <p>Para efeitos destes Termos:</p>
       <ul className="mb-4 list-disc space-y-2 pl-5">
         <li>
-          <strong>Plataforma</strong>: refere-se ao sistema DashFinance, voltado ao gerenciamento de projetos, tarefas e
-          equipes.
+          <strong>Plataforma</strong>: refere-se ao sistema DashFinance, voltado ao planejamento e à gestão financeira de
+          pessoas, consultorias e empresas.
         </li>
         <li>
           <strong>Usuário</strong>: pessoa física ou jurídica cadastrada para utilizar a Plataforma.
