@@ -1,11 +1,22 @@
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Gilda_Display, Inter_Tight } from "next/font/google";
 
 import CoreProvider from "@/providers/core-provider";
 
-const geistSans = Geist({ subsets: ["latin"], variable: "--font-geist-sans" });
-const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" });
+const interTight = Inter_Tight({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-inter-tight",
+  display: "swap",
+});
+
+const gildaDisplay = Gilda_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-gilda-display",
+  display: "swap",
+});
 
 const TITLE = "DashFinance: o sistema da sua consultoria financeira";
 const DESCRIPTION =
@@ -59,7 +70,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="pt-BR" suppressHydrationWarning className={`${interTight.variable} ${gildaDisplay.variable}`}>
       <body suppressHydrationWarning className="min-h-screen bg-background font-sans antialiased">
         <CoreProvider>{children}</CoreProvider>
       </body>

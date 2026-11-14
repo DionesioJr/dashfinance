@@ -1,5 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
+
+import { BrandMark } from "./brand-mark";
+import { Container } from "./container";
 
 const FOOTER_LINKS = [
   {
@@ -34,28 +36,27 @@ const FOOTER_LINKS = [
  */
 export function Footer() {
   return (
-    <footer className="border-t border-neutral-200 bg-white dark:border-neutral-800 dark:bg-[#0b0b0b]">
-      <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
+    <footer className="border-t border-line-soft bg-surface-base">
+      <Container className="py-14">
         <div className="grid gap-10 md:grid-cols-[1.5fr_1fr_1fr_1fr]">
           <div>
-            <Link href="/" aria-label="DashFinance, página inicial">
-              <Image src="/logo-light.svg" alt="DashFinance" width={130} height={32} className="h-7 w-auto dark:hidden" />
-              <Image src="/logo-dark.svg" alt="DashFinance" width={130} height={32} className="hidden h-7 w-auto dark:block" />
+            <Link href="/" className="focus-ring inline-flex rounded-[7px]" aria-label="DashFinance, página inicial">
+              <BrandMark />
             </Link>
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-neutral-600 dark:text-neutral-400">
+            <p className="mt-4 max-w-xs text-body text-ink-600">
               O sistema da sua consultoria financeira, do onboarding ao acompanhamento, com a sua marca.
             </p>
           </div>
 
           {FOOTER_LINKS.map((section) => (
             <div key={section.title}>
-              <h3 className="font-mono text-[11px] uppercase tracking-[0.14em] text-neutral-500">{section.title}</h3>
-              <ul className="mt-4 space-y-2.5">
+              <h3 className="text-overline uppercase text-ink-500">{section.title}</h3>
+              <ul className="mt-4 space-y-1">
                 {section.links.map((link) => (
                   <li key={link.name}>
                     <Link
                       href={link.href}
-                      className="break-words text-sm text-neutral-700 transition-colors hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-white"
+                      className="focus-ring inline-block break-words py-1.5 text-body-sm text-ink-600 transition-colors hover:text-ink-900"
                     >
                       {link.name}
                     </Link>
@@ -66,10 +67,10 @@ export function Footer() {
           ))}
         </div>
 
-        <p className="mt-12 border-t border-neutral-200 pt-6 text-xs text-neutral-500 dark:border-neutral-800">
+        <p className="mt-12 border-t border-line-soft pt-6 text-caption text-ink-500">
           &copy; {new Date().getFullYear()} DashFinance. Todos os direitos reservados.
         </p>
-      </div>
+      </Container>
     </footer>
   );
 }
