@@ -1,22 +1,25 @@
-import * as React from "react"
+import * as React from "react";
 
-import { cn } from "@/shared/utils/cn"
+import { cn } from "@/shared/utils/cn";
 
+/**
+ * Campo do design system: só a linha inferior, sem fundo e sem padding lateral.
+ */
 function Input({ className, type, ...props }: React.ComponentProps<"input">) {
   return (
     <input
       type={type}
       data-slot="input"
       className={cn(
-        "border-input file:text-foreground placeholder:text-muted-foreground selection:bg-primary selection:text-primary-foreground flex h-9 w-full min-w-0 rounded-md border bg-transparent px-3 py-1 text-base shadow-xs transition-[color,box-shadow] outline-none file:inline-flex file:h-7 file:border-0 file:bg-transparent file:text-sm file:font-medium disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 md:text-sm",
-        "focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px]",
-        "aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive",
-        className
+        "h-11 w-full min-w-0 rounded-none border-0 border-b border-line-strong bg-transparent px-0 text-[15px] text-ink-900 outline-none transition-colors placeholder:text-ink-400",
+        "focus:border-ink-900 focus-visible:shadow-[0_1px_0_0_var(--ink-900)]",
+        "disabled:cursor-not-allowed disabled:border-line-soft disabled:text-ink-400",
+        "aria-invalid:border-state-negative",
+        className,
       )}
       {...props}
     />
-  )
+  );
 }
 
-export { Input }
-
+export { Input };
