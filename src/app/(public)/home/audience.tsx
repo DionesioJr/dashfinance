@@ -14,23 +14,21 @@ const PROFILES = [
 ];
 
 /**
- * Perfis de profissionais atendidos pela plataforma.
+ * Perfis de profissionais atendidos pela plataforma, em colunas separadas por hairline.
  */
 export default function Audience() {
   return (
-    <Section id="para-quem" muted>
+    <Section id="para-quem">
       <SectionHeading eyebrow="Para quem" title="Do consultor autônomo ao escritório com equipe." />
-      <div className="mt-12 grid gap-6 md:grid-cols-2">
-        {PROFILES.map((profile) => (
-          <div key={profile.label} className="rounded-md border border-neutral-200 p-6 md:p-8 dark:border-neutral-800">
-            <p className="font-mono text-xs uppercase tracking-[0.14em] text-emerald-700 dark:text-emerald-400">
-              {profile.label}
-            </p>
-            <h3 className="mt-3 text-xl font-medium leading-snug text-neutral-900 dark:text-white">{profile.title}</h3>
-            <ul className="mt-6 space-y-2.5">
+      <div className="mt-12 grid gap-12 border-t border-line-soft pt-10 md:grid-cols-2 md:gap-0">
+        {PROFILES.map((profile, index) => (
+          <div key={profile.label} className={index > 0 ? "md:border-l md:border-line-soft md:pl-12" : "md:pr-12"}>
+            <p className="text-overline uppercase text-ink-500">{profile.label}</p>
+            <h3 className="mt-3 max-w-md text-title text-ink-900">{profile.title}</h3>
+            <ul className="mt-6 space-y-3">
               {profile.items.map((item) => (
-                <li key={item} className="flex gap-3 text-[15px] text-neutral-700 dark:text-neutral-300">
-                  <span className="mt-2 size-1.5 shrink-0 rounded-full bg-neutral-400" aria-hidden />
+                <li key={item} className="flex items-center gap-4 text-body-sm text-ink-900">
+                  <span className="size-1.5 shrink-0 rounded-pill bg-primary" aria-hidden="true" />
                   {item}
                 </li>
               ))}

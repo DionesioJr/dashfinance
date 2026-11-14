@@ -1,51 +1,56 @@
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 
-import { ButtonLink, Eyebrow, SIGN_UP_URL } from "./section-primitives";
+import { Container } from "@/components/layout/public/container";
+
+import { ButtonLink, Eyebrow, Indicator, SIGN_UP_URL } from "./section-primitives";
+
+const INDICATORS = [
+  { label: "A partir de", value: "R$ 25", hint: "por usuário ao mês" },
+  { label: "Instalação", value: "Nenhuma", hint: "Funciona no navegador" },
+  { label: "Marca", value: "A sua", hint: "Logo e cores da consultoria" },
+];
 
 /**
  * Abertura da página: diz o que é o produto, para quem e qual o próximo passo.
  */
 export default function Hero() {
   return (
-    <section className="bg-white pt-32 pb-16 md:pt-40 md:pb-24 dark:bg-[#0b0b0b]">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="mx-auto max-w-3xl text-center">
+    <section className="pt-16">
+      <div className="border-b border-line-soft bg-[linear-gradient(100deg,var(--surface-base),var(--surface-tint))]">
+        <Container className="pt-16 pb-14 md:pt-24 md:pb-16">
           <Eyebrow>Para planejadores, consultores e assessores financeiros</Eyebrow>
-          <h1 className="mt-5 text-[34px] font-semibold uppercase leading-[1.05] tracking-tight text-neutral-900 text-balance sm:text-5xl md:text-[56px] dark:text-white">
+          <h1 className="mt-5 max-w-4xl font-display text-[44px] leading-[50px] text-ink-900 text-balance md:text-[64px] md:leading-[72px] xl:text-display-xl">
             O sistema da sua consultoria financeira. Com a sua marca.
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-neutral-600 text-pretty dark:text-neutral-400">
+          <p className="mt-6 max-w-2xl text-[17px] leading-[28px] font-light text-ink-600 text-pretty">
             O DashFinance reúne o diagnóstico, o orçamento, as metas, os investimentos e o patrimônio de cada cliente em
             um só lugar. Você acompanha toda a carteira, e o seu cliente usa um aplicativo com o logo e as cores da sua
             consultoria.
           </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <ButtonLink href={SIGN_UP_URL}>
+          <div className="mt-8 flex flex-col gap-2 sm:flex-row">
+            <ButtonLink href={SIGN_UP_URL} chevron>
               Começar teste grátis
-              <ArrowRight className="size-4" />
             </ButtonLink>
-            <ButtonLink href="#como-funciona" variant="outline">
+            <ButtonLink href="#como-funciona" variant="soft">
               Ver como funciona
             </ButtonLink>
           </div>
-          <p className="mt-5 text-sm text-neutral-500 dark:text-neutral-400">
-            A partir de R$ 25 por usuário ao mês. Funciona no navegador, sem instalação.
-          </p>
-        </div>
 
-        <figure className="mt-14 overflow-hidden rounded-md border border-neutral-200 bg-neutral-50 shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)] dark:border-neutral-800 dark:bg-neutral-900">
-          <div className="flex items-center justify-between border-b border-neutral-200 px-4 py-2.5 dark:border-neutral-800">
-            <div className="flex gap-1.5" aria-hidden>
-              <span className="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-              <span className="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-              <span className="size-2.5 rounded-full bg-neutral-300 dark:bg-neutral-700" />
-            </div>
-            <figcaption className="font-mono text-[11px] uppercase tracking-[0.14em] text-neutral-500">
-              Aplicativo do cliente / Dashboard
-            </figcaption>
-            <span className="w-10" aria-hidden />
+          <div className="mt-14 grid gap-6 sm:grid-cols-3 sm:gap-0">
+            {INDICATORS.map((item, index) => (
+              <div key={item.label} className={index > 0 ? "sm:border-l sm:border-line-strong sm:pl-7" : "sm:pr-7"}>
+                <Indicator label={item.label} value={item.value} hint={item.hint} />
+              </div>
+            ))}
           </div>
+        </Container>
+      </div>
+
+      <Container className="py-12 md:py-16">
+        <figure className="border border-line-soft bg-surface-base">
+          <figcaption className="border-b border-line-soft px-5 py-3 text-overline uppercase text-ink-500">
+            Aplicativo do cliente / Dashboard
+          </figcaption>
           <Image
             src="/images/app/dashboard.jpg"
             alt="Dashboard do cliente com receita, despesas, saldo líquido e o ritmo de gastos do mês"
@@ -55,7 +60,7 @@ export default function Hero() {
             className="block h-auto w-full"
           />
         </figure>
-      </div>
+      </Container>
     </section>
   );
 }

@@ -37,17 +37,15 @@ export default function Included() {
         title="Uma plataforma, duas visões."
         description="Você trabalha no painel do consultor. O seu cliente usa o aplicativo da sua consultoria. Os dados são os mesmos, sem retrabalho."
       />
-      <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-16">
-        {COLUMNS.map((column) => (
-          <div key={column.label}>
-            <h3 className="border-b border-neutral-900 pb-3 font-mono text-xs uppercase tracking-[0.14em] text-neutral-900 dark:border-white dark:text-white">
-              {column.label}
-            </h3>
-            <dl className="divide-y divide-neutral-200 dark:divide-neutral-800">
+      <div className="mt-14 grid gap-12 md:grid-cols-2 md:gap-0">
+        {COLUMNS.map((column, index) => (
+          <div key={column.label} className={index > 0 ? "md:border-l md:border-line-soft md:pl-12" : "md:pr-12"}>
+            <h3 className="border-b border-line-strong pb-3 text-overline uppercase text-ink-500">{column.label}</h3>
+            <dl>
               {column.items.map(([term, description]) => (
-                <div key={term} className="grid gap-1 py-4 sm:grid-cols-[170px_1fr] sm:gap-6">
-                  <dt className="text-[15px] font-medium text-neutral-900 dark:text-white">{term}</dt>
-                  <dd className="text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">{description}</dd>
+                <div key={term} className="grid gap-1 border-b border-line-soft py-4 sm:grid-cols-[160px_1fr] sm:gap-6">
+                  <dt className="text-heading text-ink-900">{term}</dt>
+                  <dd className="text-body text-ink-600">{description}</dd>
                 </div>
               ))}
             </dl>

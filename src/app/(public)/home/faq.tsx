@@ -42,17 +42,21 @@ const QUESTIONS = [
  */
 export default function Faq() {
   return (
-    <Section id="perguntas" muted>
-      <div className="grid gap-10 md:grid-cols-[1fr_1.4fr] md:gap-16">
+    <Section id="perguntas">
+      <div className="grid gap-10 md:grid-cols-[2fr_3fr] md:gap-12">
         <SectionHeading eyebrow="Perguntas frequentes" title="O que os consultores perguntam antes de começar." />
-        <div className="border-t border-neutral-200 dark:border-neutral-800">
+        <div className="border-t border-line-strong">
           {QUESTIONS.map((item) => (
-            <details key={item.q} className="group border-b border-neutral-200 dark:border-neutral-800">
-              <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-5 text-[16px] font-medium text-neutral-900 marker:hidden dark:text-white [&::-webkit-details-marker]:hidden">
+            <details key={item.q} className="group border-b border-line-soft">
+              <summary className="focus-ring flex min-h-11 cursor-pointer list-none items-center justify-between gap-6 py-5 text-heading text-ink-900 marker:hidden [&::-webkit-details-marker]:hidden">
                 {item.q}
-                <Plus className="size-4 shrink-0 text-neutral-500 transition-transform group-open:rotate-45" />
+                <Plus
+                  className="size-[18px] shrink-0 text-ink-500 transition-transform group-open:rotate-45"
+                  strokeWidth={1.5}
+                  aria-hidden="true"
+                />
               </summary>
-              <p className="pb-5 pr-10 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">{item.a}</p>
+              <p className="pr-10 pb-5 text-body text-ink-600">{item.a}</p>
             </details>
           ))}
         </div>

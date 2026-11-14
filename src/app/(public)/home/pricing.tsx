@@ -1,4 +1,4 @@
-import { ArrowRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 
 import { ButtonLink, DEMO_URL, SIGN_UP_URL, Section, SectionHeading } from "./section-primitives";
 
@@ -25,8 +25,17 @@ const IDEAL_EXTRAS = ["Suporte prioritário", "Reunião de onboarding", "Treinam
 
 const brl = (value: number) => value.toLocaleString("pt-BR");
 
+function CheckItem({ children }: { children: React.ReactNode }) {
+  return (
+    <li className="flex gap-4 text-body-sm text-ink-900">
+      <Check className="mt-px size-[18px] shrink-0 text-primary" strokeWidth={1.5} aria-hidden="true" />
+      {children}
+    </li>
+  );
+}
+
 /**
- * Seção de preços por usuário, com faixas de volume e o plano ideal em destaque.
+ * Seção de preços por usuário, com o plano ideal em destaque e as faixas de volume em tabela.
  */
 export default function Pricing() {
   return (
@@ -37,79 +46,73 @@ export default function Pricing() {
         description="Todos os valores são mensais. Contrato com duração anual e renovação automática. Todos os planos incluem a plataforma completa."
       />
 
-      <div className="mt-12 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-        <div className="rounded-md border border-neutral-900 bg-white p-6 md:p-10 dark:border-white dark:bg-[#0b0b0b]">
-          <div className="flex flex-wrap items-start justify-between gap-4">
-            <div>
-              <p className="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
-                Plano Ideal · {IDEAL.users} usuários
-              </p>
-              <p className="mt-4 flex items-baseline gap-1 text-neutral-900 dark:text-white">
-                <span className="text-lg">R$</span>
-                <span className="text-6xl font-medium tracking-tight tabular-nums">{IDEAL.perUser}</span>
-                <span className="text-base text-neutral-500">/usuário por mês</span>
-              </p>
-              <p className="mt-2 text-sm text-neutral-600 dark:text-neutral-400">
-                A partir de R$ {brl(IDEAL.monthly)}/mês para {IDEAL.users} usuários.
-              </p>
-            </div>
-            <span className="rounded-full border border-emerald-600/30 bg-emerald-50 px-3 py-1 text-xs font-medium text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
+      <div className="mt-12 grid gap-12 border-t border-line-soft pt-10 lg:grid-cols-[3fr_2fr] lg:gap-0">
+        <div className="lg:pr-12">
+          <div className="flex flex-wrap items-center gap-3">
+            <p className="text-overline uppercase text-ink-500">Plano Ideal · {IDEAL.users} usuários</p>
+            <span className="inline-flex h-7 items-center rounded-pill bg-brand-050 px-3 text-[13px] text-ink-900">
               Melhor valor
             </span>
           </div>
-
-          <ul className="mt-8 space-y-3 border-t border-neutral-200 pt-8 dark:border-neutral-800">
-            {INCLUDED.map((item) => (
-              <li key={item} className="flex gap-3 text-[15px] text-neutral-800 dark:text-neutral-200">
-                <Check className="mt-0.5 size-4 shrink-0 text-emerald-600" />
-                {item}
-              </li>
-            ))}
-          </ul>
-
-          <p className="mt-8 font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">
-            Exclusivo para {IDEAL.users} usuários
+          <p className="mt-5 flex flex-wrap items-baseline gap-x-3 gap-y-1">
+            <span className="text-amount-lg text-ink-900 tabular-nums">R$ {IDEAL.perUser}</span>
+            <span className="text-body-sm text-ink-600">por usuário ao mês</span>
           </p>
-          <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-            {IDEAL_EXTRAS.map((item) => (
-              <li key={item} className="flex gap-3 text-[15px] text-neutral-800 dark:text-neutral-200">
-                <Check className="mt-0.5 size-4 shrink-0 text-emerald-600" />
-                {item}
-              </li>
+          <p className="mt-3 text-body text-ink-600">
+            A partir de R$ {brl(IDEAL.monthly)} ao mês para {IDEAL.users} usuários.
+          </p>
+
+          <ul className="mt-8 space-y-3 border-t border-line-soft pt-8">
+            {INCLUDED.map((item) => (
+              <CheckItem key={item}>{item}</CheckItem>
             ))}
           </ul>
 
-          <ButtonLink href={DEMO_URL} className="mt-8 w-full sm:w-auto">
+          <p className="mt-8 text-overline uppercase text-ink-500">Exclusivo para {IDEAL.users} usuários</p>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {IDEAL_EXTRAS.map((item) => (
+              <CheckItem key={item}>{item}</CheckItem>
+            ))}
+          </ul>
+
+          <ButtonLink href={DEMO_URL} chevron className="mt-10 w-full sm:w-auto">
             Solicitar proposta
-            <ArrowRight className="size-4" />
           </ButtonLink>
         </div>
 
-        <div className="flex flex-col rounded-md border border-neutral-200 bg-white p-6 md:p-10 dark:border-neutral-800 dark:bg-[#0b0b0b]">
-          <p className="font-mono text-xs uppercase tracking-[0.14em] text-neutral-500">Outras opções</p>
-          <table className="mt-6 w-full text-left text-[15px]">
-            <thead>
-              <tr className="border-b border-neutral-900 text-xs uppercase tracking-[0.08em] text-neutral-500 dark:border-white">
-                <th scope="col" className="py-3 font-medium">Usuários</th>
-                <th scope="col" className="py-3 text-right font-medium">Por usuário</th>
-                <th scope="col" className="py-3 text-right font-medium">Parcela/mês</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-200 tabular-nums dark:divide-neutral-800">
-              {TIERS.map((tier) => (
-                <tr key={tier.users} className="text-neutral-800 dark:text-neutral-200">
-                  <td className="py-3 font-medium">{tier.users}</td>
-                  <td className="py-3 text-right">R$ {brl(tier.perUser)}</td>
-                  <td className="py-3 text-right">R$ {brl(tier.monthly)}</td>
+        <div className="flex flex-col lg:border-l lg:border-line-soft lg:pl-12">
+          <p className="text-overline uppercase text-ink-500">Outras opções</p>
+          <div className="mt-4 overflow-x-auto">
+            <table className="w-full min-w-[320px] text-left text-body-sm">
+              <thead>
+                <tr className="border-b border-line-strong">
+                  <th scope="col" className="py-3 text-overline uppercase text-ink-500">
+                    Usuários
+                  </th>
+                  <th scope="col" className="py-3 text-right text-overline uppercase text-ink-500">
+                    Por usuário
+                  </th>
+                  <th scope="col" className="py-3 text-right text-overline uppercase text-ink-500">
+                    Parcela/mês
+                  </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="mt-4 text-sm text-neutral-500 dark:text-neutral-400">
+              </thead>
+              <tbody className="tabular-nums">
+                {TIERS.map((tier) => (
+                  <tr key={tier.users} className="border-b border-line-soft text-ink-900">
+                    <td className="py-3">{tier.users}</td>
+                    <td className="py-3 text-right">R$ {brl(tier.perUser)}</td>
+                    <td className="py-3 text-right">R$ {brl(tier.monthly)}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-caption text-ink-600">
             Parcela mensal calculada pelo número mínimo de usuários de cada faixa.
           </p>
           <div className="mt-auto pt-8">
-            <ButtonLink href={SIGN_UP_URL} variant="outline" className="w-full sm:w-auto">
+            <ButtonLink href={SIGN_UP_URL} variant="soft" className="w-full sm:w-auto">
               Começar teste grátis
             </ButtonLink>
           </div>

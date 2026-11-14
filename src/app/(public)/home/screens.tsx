@@ -31,13 +31,13 @@ const SCREENS = [
 ];
 
 /**
- * Galeria com as principais telas do aplicativo do cliente.
+ * Galeria com as principais telas do aplicativo do cliente, trocadas por filtros em cápsula.
  */
 export default function Screens() {
   const [active, setActive] = useState(0);
 
   return (
-    <Section id="telas" muted>
+    <Section id="telas">
       <SectionHeading
         eyebrow="Por dentro do aplicativo"
         title="O que o seu cliente vê, em quatro telas."
@@ -48,25 +48,24 @@ export default function Screens() {
         {SCREENS.map((screen, index) => (
           <button
             key={screen.label}
+            id={`tela-${index}`}
             role="tab"
             type="button"
             aria-selected={active === index}
+            aria-controls="tela-painel"
             onClick={() => setActive(index)}
             className={cn(
-              "flex shrink-0 items-center gap-2 rounded-[4px] border px-4 py-2 text-sm transition-colors",
-              active === index
-                ? "border-neutral-900 bg-neutral-900 text-white dark:border-white dark:bg-white dark:text-neutral-900"
-                : "border-neutral-200 text-neutral-700 hover:border-neutral-400 dark:border-neutral-800 dark:text-neutral-300",
+              "focus-ring flex h-9 shrink-0 cursor-pointer items-center rounded-pill px-4 text-body-sm transition-colors",
+              active === index ? "bg-brand-050 text-ink-900" : "text-ink-500 hover:text-ink-900",
             )}
           >
-            <span className="font-mono text-xs opacity-60">{String(index + 1).padStart(2, "0")}</span>
             {screen.label}
           </button>
         ))}
       </div>
 
-      <figure role="tabpanel" className="mt-6">
-        <div className="overflow-hidden rounded-md border border-neutral-200 bg-white shadow-[0_30px_80px_-40px_rgba(0,0,0,0.35)] dark:border-neutral-800">
+      <figure id="tela-painel" role="tabpanel" aria-labelledby={`tela-${active}`} className="mt-6">
+        <div className="border border-line-soft bg-surface-base">
           {SCREENS.map((screen, index) => (
             <Image
               key={screen.src}
@@ -78,9 +77,7 @@ export default function Screens() {
             />
           ))}
         </div>
-        <figcaption className="mt-4 text-[15px] text-neutral-600 dark:text-neutral-400">
-          {SCREENS[active].caption}
-        </figcaption>
+        <figcaption className="mt-4 max-w-2xl text-body text-ink-600">{SCREENS[active].caption}</figcaption>
       </figure>
     </Section>
   );

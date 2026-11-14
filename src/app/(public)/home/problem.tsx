@@ -24,20 +24,21 @@ const PROBLEMS = [
  */
 export default function Problem() {
   return (
-    <Section muted>
+    <Section>
       <SectionHeading
         eyebrow="O problema"
         title="O que a planilha não mostra."
         description="Planejamento financeiro é acompanhamento contínuo. Quando os dados ficam espalhados, o seu tempo vai para organizar arquivos, não para orientar o cliente."
       />
-      <div className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-        {PROBLEMS.map((problem) => (
-          <div key={problem.title} className="border-t border-neutral-300 pt-5 dark:border-neutral-700">
-            <h3 className="text-lg font-medium leading-snug text-neutral-900 dark:text-white">{problem.title}</h3>
-            <p className="mt-3 text-[15px] leading-relaxed text-neutral-600 dark:text-neutral-400">{problem.text}</p>
-          </div>
+      <ol className="mt-14 grid gap-x-8 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
+        {PROBLEMS.map((problem, index) => (
+          <li key={problem.title} className="border-t border-line-strong pt-5">
+            <p className="text-overline text-ink-500">{String(index + 1).padStart(2, "0")}</p>
+            <h3 className="mt-3 text-heading text-ink-900">{problem.title}</h3>
+            <p className="mt-2 text-body text-ink-600">{problem.text}</p>
+          </li>
         ))}
-      </div>
+      </ol>
     </Section>
   );
 }
