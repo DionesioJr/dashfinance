@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-Orientação para o Claude Code em `dashfinance/`. Regras gerais (idioma, emojis, travessão, comentários, subagentes, commits, changelog, formato das respostas) ficam no [`CLAUDE.md`](../CLAUDE.md) da raiz.
+Orientação para o Claude Code em `site/`. Regras gerais (idioma, emojis, travessão, comentários, subagentes, commits, changelog, formato das respostas) ficam no [`CLAUDE.md`](../CLAUDE.md) da raiz.
 
 ## Projeto
 
@@ -33,3 +33,4 @@ Comandos: `pnpm dev`, `pnpm lint` (só com autorização do usuário).
 - Copy do site em português do Brasil, com ortografia, acentuação e pontuação corretas, sem emojis e sem travessão.
 - Declare `"use client"` só quando o componente precisar de estado, efeito ou evento do navegador.
 - Nunca crie arquivos `index.ts` ou `index.tsx`.
+- Em dúvida de decisão (posicionamento, copy, preço, SEO, confiança), consulte o conselho em [`EXPERTS.md`](./EXPERTS.md) e siga a melhor orientação dos especialistas da área. Produto, finanças pessoais e regulação ficam no [`EXPERTS.md`](../EXPERTS.md) da raiz.
